@@ -35,7 +35,7 @@ public class App {
         int firstNumber = 0, secondNumber = 0, opCode = 0;
         try (Scanner inputScanner = new Scanner(System.in)) {
             System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("Hi! Welcome to a Simple calculator App for performing Addition of Two Numbers.");
+            System.out.println("Hi! Welcome to a Simple calculator App for performing basic arithmetic operations on two numbers.");
             System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             System.out.println("Please enter first number");
             firstNumber = inputScanner.nextInt();
@@ -108,7 +108,7 @@ public class App {
 
         App newAppMain = new App();
 
-        // newAppMain.calculatorMain();
-        newAppMain.patternMaker();
+        newAppMain.calculatorMain();
+        // newAppMain.patternMaker();
     }
 }
