@@ -1,10 +1,6 @@
 import java.util.Scanner;
 
-import javax.xml.crypto.Data;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
+import java.io.*;
 
 public class App {
 
@@ -25,6 +21,7 @@ public class App {
 
             //Accepting user input
             option = optionScanner.nextInt();
+            optionScanner.close();
 
             //switch case for determining flow of control on basis of option selected by user
             switch (option) {
@@ -58,20 +55,22 @@ public class App {
             Scanner emailScanner = new Scanner(System.in);
             System.out.println("Please enter new Email ID!!");
             String newEmail = emailScanner.nextLine();
+            emailScanner.close();
             String emailFileData="";
             File emailFile = new File("C:\\Users\\DXYT\\GreatLearningGIT\\GreatLearningGIT\\GL_Prework\\emailServer\\emailServerClientDumy\\lib\\emailList.txt");
             Scanner fileReader = new Scanner (emailFile);
-             while(fileReader.hasNextLine()){
+            while(fileReader.hasNextLine()){
                  emailFileData += fileReader.nextLine()+"\n";
 
              }
+            fileReader.close();
             FileWriter emailFileWriter = new FileWriter("C:\\Users\\DXYT\\GreatLearningGIT\\GreatLearningGIT\\GL_Prework\\emailServer\\emailServerClientDumy\\lib\\emailList.txt");
             emailFileWriter.write(emailFileData+newEmail+"\n");
             emailFileWriter.close();
             System.out.println("Email is succesfully created !!");
                        
         } catch (Exception e) {
-            //TODO: handle exception
+            
             System.out.println("Error Occuredd:" + e.getMessage());
         }
 
@@ -97,7 +96,7 @@ public class App {
             fileReader.close();
             
         } catch (FileNotFoundException e) {
-            //TODO: handle exception
+            
             System.out.println("Error Occured: "+ e.getMessage());
         }
         // System.out.println("displayed");
