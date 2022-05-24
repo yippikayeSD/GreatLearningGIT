@@ -1,0 +1,22 @@
+Write an algorithm to create a class Customer that contains 
+
+          fullName(String) and age(int) as variables in class. 
+
+Create a main method, assign values to the variables in the main method and print the values of variables using the object of the main method. 
+
+After writing the algorithm, write suitable code, run the program, and check the output.
+
+ 
+
+Algorithm
+
+Step 1: Start
+Step 2: Define a class Customer
+Step 3: declare Member data fullName(String) 
+Step 4: declare Member data age(int)
+Step 5: Define public static void main(String args [])
+Step 6: define Strig fullName =" Shubham Dixit";
+Step 7: define int age =32;
+Step 8: instantiate object of class Customer as Customer c1 = new Customer();
+Step 9: Print the desired output using the object as System.out.println("the full Name is "+fullName+" and the age is "+age);
+Step 10: Stop
