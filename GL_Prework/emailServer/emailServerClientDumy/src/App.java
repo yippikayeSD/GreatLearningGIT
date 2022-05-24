@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.*;
 
 public class App {
@@ -21,7 +26,7 @@ public class App {
 
             //Accepting user input
             option = optionScanner.nextInt();
-            optionScanner.close();
+            // optionScanner.close();
 
             //switch case for determining flow of control on basis of option selected by user
             switch (option) {
@@ -51,6 +56,7 @@ public class App {
     }
     
     private void createEmail() {
+        /*
         try {
             Scanner emailScanner = new Scanner(System.in);
             System.out.println("Please enter new Email ID!!");
@@ -71,8 +77,44 @@ public class App {
                        
         } catch (Exception e) {
             
-            System.out.println("Error Occuredd:" + e.getMessage());
+            System.out.println("Error Occurred:" + e.getMessage());
         }
+        */
+        try {
+            Scanner userScanner = new Scanner(System.in);
+            
+            System.out.println("Please Enter First Name!!");
+            String firstName = userScanner.nextLine();
+            System.out.println("Please Enter Last Name");
+            String lastName = userScanner.nextLine();
+            System.out.println("Please Enter Email");
+            String email = userScanner.nextLine();
+            System.out.println("Please Enter Password");
+            String password = userScanner.nextLine();
+                        
+            JSONObject user = new JSONObject();
+            user.put("First Name", firstName);
+            user.put("Last Name", lastName);
+            user.put( "Password", password);
+            user.put( "Email", email);
+
+            Object userDetails = (Object) new JSONParser().parse(new FileReader(".\\lib\\email.JSON"));
+            JSONArray allUsers = (JSONArray) userDetails;
+            allUsers.add(user);
+            
+            PrintWriter userWriter = new PrintWriter("C:\\Users\\DXYT\\GreatLearningGIT\\GreatLearningGIT\\GL_Prework\\emailServer\\emailServerClientDumy\\lib\\email.JSON");
+            userWriter.write(allUsers.toJSONString());
+            userWriter.close();
+
+            System.out.println("User Created Succesfully");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error Occured, File Not Found: "+ e.getMessage()+ "The reason is: "+e.getCause().toString());
+        }catch (ParseException e) {
+            System.out.println("Error Occured, Unable to Parse: "+ e.getMessage()+ "The reason is: "+e.getCause().toString());
+        }catch(IOException e){
+            System.out.println("Error Occured, I/O Exception: "+ e.getStackTrace());
+        }
+
 
     }
 
@@ -85,7 +127,9 @@ public class App {
 
 
     private void displayEmails() {
+        /*
         try {
+
             File emailFile = new File("C:\\Users\\DXYT\\GreatLearningGIT\\GreatLearningGIT\\GL_Prework\\emailServer\\emailServerClientDumy\\lib\\emailList.txt");
             Scanner fileReader = new Scanner (emailFile);
             System.out.println("The List of Email in the Database are: ");
@@ -96,10 +140,35 @@ public class App {
             fileReader.close();
             
         } catch (FileNotFoundException e) {
-            
             System.out.println("Error Occured: "+ e.getMessage());
         }
-        // System.out.println("displayed");
+        
+        */
+        try {
+            Object emailJsonObject =  new JSONParser().parse(new FileReader("C:\\Users\\DXYT\\GreatLearningGIT\\GreatLearningGIT\\GL_Prework\\emailServer\\emailServerClientDumy\\lib\\email.JSON"));
+            JSONArray userList = (JSONArray) emailJsonObject;
+            System.out.println("======================================================>");
+            int userCount = 1;
+            for (Object user : userList) {
+               
+                JSONObject userJSON = (JSONObject) user;
+                System.out.println("User Number: "+userCount);
+                String firstName = (String) userJSON.get("First Name");
+                String lastName = (String) userJSON.get("Last Name");
+                String password = (String) userJSON.get("Password");
+                String email = (String) userJSON.get("Email");
+                System.out.println("Name : " + firstName +  " "+ lastName);
+                System.out.println("Email: "+ email);
+                System.out.println("Password: "+ password);
+                System.out.println("======================================================>");
+                userCount++;
+               
+              
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error Occured while retrieving data from JSON File: "+ e.getMessage());
+        }
     }
 
 
