@@ -1,0 +1,58 @@
+Q: To create a smart array which is dynamic in nature and has methods to perform various operations like:
+1. Traverse
+2. Search
+3. Sort
+4. Insert
+5. Delete
+6. Length
+Solution:
+
+step1:  start
+step2:  create class SmartArray
+step3:  create attributes smartArray, size and capacity
+step4:  create method createArray(int length) which will instantiate an array with size == capacity == int length
+step5:  create method fillArray() which will ask user to input all elements in the array ( int length)
+step6:  create method length() which returns an integer value of size of array
+step7:  create method traverse() which prints all values of array from 0 to size
+step8:  create method searchL(int key) which returns 1 if key is found in array and 0 if key is not found using linear search
+step9:  create method searchB(int key) which returns 1 if key is found in array and 0 if key is not found using  binary search
+step10: create method searchJ(int key) which returns 1 if key is found in array and 0 if key is not found using  jump search
+step11: create method sortS() which sorts the array using selection sort
+step12: create method sortB() which sorts the array using bubble sort
+step13: create method sortI() which sorts the array using insertion sort
+step14: create method insert(int element) which inserts the element at last position if size <= capacity 
+step15: create method insert(int element, int index) which inserts element at index position specified by user
+step16: create method delete(int element) which deletes the element passed by user as argument
+step16: create method deleteAt(int index) which deletes the element at index passed by user as argument
+step17: create class SmartArrayDriver with main method
+step18: create object of SmartArray and perform various operations on it
+step19: stop
+
+
+Algorithm for creating array
+step0:  start
+step1:  create method createArray(int length)
+step2:  declare an array using new keyword with length as argument 
+step3:  stop
+
+Algorithm for length ()
+step0: start
+step1: create int count = 0
+step2: create while loop until flag != 0
+step3: check if (smartArray[count] != 0 && smartArray[count] != null) then count++ else break;
+step4: return ++count after while block ends
+step5: end
+ 
+
+Algorithm to fill array
+step0: start
+step1: create method fillArray()
+step2: use int length and populate value using length() function
+step3: import and  create an object of Scanner class
+step4: run a for loop till i<smartArray.length()
+step5: sysout enter the element on index i
+step6: use object of scanner class to take element as input from user
+step7: sysout "all values filled in array of size" smartArray.length() after foor loop ends
+step8: end
+
+

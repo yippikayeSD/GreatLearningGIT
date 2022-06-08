@@ -1,0 +1,29 @@
+Description
+
+    Write an algorithm to implement access modifier functionality. 
+
+Create two separate classes Health & HealthDriver inside  com.greatlearning.corejava; package 
+
+Declare variables age(int), weight(float) & bmi(float) inside class Health as protected.
+
+Display all the variable in class HealthDriver
+
+ 
+
+After writing the algorithm, write suitable code, run the program, and check the output.
+
+ 
+
+Algorithm
+
+Step 1: Start
+
+Step 2: create package com.greatlearning.corejava
+Step 3: Create class Health
+Step 3: Declare protected data mambers age(int), weight(float), bmi(float)
+Step 4: create class HealthDriver
+Step 5: declare main method
+step 6: create object of class Health in main
+step 7: print all protected data members of class Health using object of class Health created
+
+Step 8: Stop
