@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BubbleSortImplementation",
+            "request": "launch",
+            "mainClass": "com.greatlearning.datastructures.sorting.BubbleSortImplementation",
+            "projectName": "ClassObjectTut_54ccc082"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

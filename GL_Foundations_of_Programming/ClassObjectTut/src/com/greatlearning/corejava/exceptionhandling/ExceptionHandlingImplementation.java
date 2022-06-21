@@ -85,6 +85,8 @@ class StringExceptionDemo{
 
 
 public class ExceptionHandlingImplementation {
+    
+
     public static void main(String[] args) {
 
         /*
@@ -130,7 +132,14 @@ public class ExceptionHandlingImplementation {
 
 
         // SimpleExceptionDemo obj = new SimpleExceptionDemo(45);
-        StringExceptionDemo objString = new StringExceptionDemo();
+        //StringExceptionDemo objString = new StringExceptionDemo();
+        try {
+            throw new CustomException("Custom Exception Occured");
+        } catch (CustomException e) {
+            //Since this extends Exception, it has to be
+            // explicitly handled as it becomes checked exception
+            e.printStackTrace();
+        }
 
 
     }
