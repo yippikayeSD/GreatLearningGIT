@@ -1,4 +1,4 @@
-package com.greatlearning.corejava;
+package com.greatlearning.corejava.abstraction;
 
 
 abstract class AbstractionPartial{
@@ -31,6 +31,11 @@ public class AbstractionImplementation {
 
     
     public static void main(String[] args) {
+        //Cannot instantiate abstract class, uncomment and see
+        // AbstractionComplete obj1 = new AbstractionComplete();
+        //Cannot instantiate partial abstract class as well
+        // AbstractionPartial obj2 = new AbstractionPartial();
+        
         AbstractionComplete objComplete = new DisplayAbstractionComplete();
         objComplete.display();
         objComplete.printTrue();

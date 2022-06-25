@@ -71,7 +71,7 @@ public class PriorityQueueImplementation {
          queue.add("A");
          queue.add("x");
          queue.add("X");
-         Iterator queueIterator = queue.iterator();
+         Iterator<String> queueIterator = queue.iterator();
          while(queueIterator.hasNext()){
              
              System.out.println("Printing Queue through Iterator:" + queue.poll());
@@ -91,7 +91,7 @@ public class PriorityQueueImplementation {
          integerQueue.add(8);
          integerQueue.add(3);
          System.out.println("Integer Priority Queue in order of addition"+integerQueue);
-         Iterator integerIterator  = integerQueue.iterator();
+         Iterator<Integer> integerIterator  = integerQueue.iterator();
          while(integerIterator.hasNext()){
              System.out.println(integerQueue.poll());
              System.out.println("Integer Priority Queue in natural order"+integerQueue);

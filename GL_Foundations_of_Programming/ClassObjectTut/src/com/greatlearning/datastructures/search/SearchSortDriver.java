@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.SortedMap;
 
 import com.greatlearning.datastructures.sorting.BubbleSortImplementation;
+import com.greatlearning.datastructures.sorting.InsertionSort;
 import com.greatlearning.datastructures.sorting.SelectionSort;
 
 public class SearchSortDriver {
@@ -15,6 +16,7 @@ public class SearchSortDriver {
         BinarySearch binary = new BinarySearch();
         BubbleSortImplementation bubble =new BubbleSortImplementation();
         SelectionSort selection = new SelectionSort();
+        InsertionSort insertion = new InsertionSort();
         System.out.println("-----Welcome to the Linear Search Program------");
         System.out.println("please enter number of elements to be inserted in the Data Set");
         boolean isSorted = false;
@@ -35,6 +37,7 @@ public class SearchSortDriver {
             System.out.println("Enter 2 for Linear Search");
             System.out.println("Enter 3 for Sorting using Bubble Sort");
             System.out.println("Enter 4 for Sorting using Selection Sort");
+            System.out.println("Enter 5 for Sorting using Insertion Sort");
             int userAlgorithmChoice = Integer.parseInt(bufferedReader.readLine());
             if(userAlgorithmChoice == 1 || userAlgorithmChoice == 2){
                 System.out.println("Enter element to be found");
@@ -62,6 +65,16 @@ public class SearchSortDriver {
                 case 4:
                 isSorted = true;
                 userDataSet = selection.sort(userDataSet);
+                System.out.println("-----The Sorted Data Set is -----");
+                System.out.print("[");
+                for(int i = 0; i<userDataSet.length; i++){
+                    System.out.printf(" %d ",userDataSet[i]);
+                }
+                System.out.print("]");
+                break;
+                case 5:
+                isSorted = true;
+                userDataSet = insertion.sort(userDataSet);
                 System.out.println("-----The Sorted Data Set is -----");
                 System.out.print("[");
                 for(int i = 0; i<userDataSet.length; i++){
